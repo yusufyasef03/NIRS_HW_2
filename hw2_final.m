@@ -69,10 +69,16 @@ disp('Done!');
 % --- 5. Plot the results ---
 t = (0:numDataFrames-1) / 40; % 40 Hz frame rate
 
-figure;
+fig1 = figure; % 
+
 plot(t, BFi, 'r-', 'LineWidth', 1.5);
 title('Blood Flow Index (BFi) Over Time');
 xlabel('Time (Seconds)');
 ylabel('BFi [a.u.]');
 grid on;
 axis tight;
+
+%
+pos = fig1.Position; 
+fig1.Position = [pos(1), pos(2), pos(3), pos(4) * 0.5]; 
+% --------------------------------------
